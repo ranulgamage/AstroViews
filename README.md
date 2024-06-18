@@ -1,4 +1,4 @@
-# 🌌 NASA Astronomy Picture of the Day Web App
+# 🌌 NASA Astronomy Picture of the Day Web App(AstroView)
 
 ## Overview
 The NASA Astronomy Picture of the Day (APOD) Web App is a captivating application that showcases the wonders of the universe. Built with React.js, this app fetches and displays the Astronomy Picture of the Day from NASA's APOD API, along with the title and detailed information about the image. It's an engaging way to explore space through stunning photographs and educational descriptions.
