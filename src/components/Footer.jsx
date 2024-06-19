@@ -23,7 +23,7 @@ export default function Footer(props) {
           AstroViews by
           <img src="log-rgdev.png" width="300px" height="100px" />
         </h1>
-        <h5>Page Last Updated: {currentDate}|           |Page Designer: Ranul Gamage</h5>
+        <h5 className='mobileResizeH5'>Page Last Updated: {currentDate}|           |Page Designer: Ranul Gamage</h5>
         <div className='footerRights'>
           <h5>© 2024 RGDev. All rights reserved.</h5>
         </div>
@@ -38,7 +38,7 @@ export default function Footer(props) {
         </button>
       </div>
       <div className='footerImgName'><h2>
-        {data?.title} 
+        {data?.title|| "Picture Of Our Galaxy The Milky Way Galaxy(Hint:it mite be but its not)"} 
       </h2></div>
     </footer>
 

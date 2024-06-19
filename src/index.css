@@ -221,13 +221,14 @@ background: linear-gradient(to top,#030615,rgba(255,25));
   .centered-title {
     display: flex;
     justify-content:space-between;
-    align-items:end;
+    align-items:center;
     text-align: start;
-    
+    font-size: 1.3rem;
   }
   .centered-title img {
     width: 200px;
     height: 80px;
+    padding-bottom: 1rem;
   }
   .footerImgName {
   position: fixed;
@@ -241,7 +242,7 @@ background: linear-gradient(to top,#030615,rgba(255,25));
   gap: 1rem;
 }
 .footerImgName  h2{
-  font-size: 2.3rem;
+  font-size: 1.8rem;
 }
 .footerButtons {
 position: fixed;
@@ -254,5 +255,16 @@ right: 0;
 justify-content: center;
 align-items: center;
 }
+footer h5{
+  font-family:  "Roboto Mono", monospace;
+  font-size: x-small;
+}
+.mobileResizeH5{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1%;
+}
+
   
 }
