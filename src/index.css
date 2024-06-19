@@ -3,8 +3,7 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: white;
   background-color: #242424;
 
   font-synthesis: none;
@@ -12,7 +11,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 #root {
 min-height:100vh;
 display: flex;
@@ -22,6 +25,8 @@ display: relative;
 .imgContainer {
   display: flex;
   flex-direction: column;
+  max-height: 100vh;
+  width: 100%;
 }
 
 .centered-title {
@@ -58,6 +63,67 @@ footer {
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
+  padding: 1rem;
+}
+footer h2{
+  font-size: 1.6rem;
+}
+footer h1{
+  font-size:x-large;
+  font-family: "Roboto Mono", monospace;
+}
+footer h5{
+  font-family:  "Roboto Mono", monospace;;
+}
+.footerRights{
+  padding-left:20%;
+}
+.footerButtons button{
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 1rem;
+  font-size: medium;
+  font-family:  "Roboto Mono", monospace;
+  transition-duration: 200ms;
+  cursor: pointer;
+}
+.footerButtons button i{
+  font-size: 1.3rem;
+}
+.footerButtons button:hover{
+  opacity: 0.5;
+}
+.footerImgName {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 11rem;
+  padding-left: 1rem;
+  gap: 1rem;
+}
+.footerImgName  h2{
+  font-size: 2.3rem;
+}
+.sideBarDownload {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 1rem;
+  font-size: medium;
+  font-family:  "Roboto Mono", monospace;
+  transition-duration: 200ms;
+}
+.sideBarDownload i{
+  font-size: 1.3rem;
+}
+.sideBarDownload:hover{
+  opacity: 0.5;
 }
 .bottomInfor{
   position:fixed;
@@ -66,4 +132,123 @@ footer {
   display:grid;
   align-items: center;
   flex-direction:row;
+}
+
+.bgGradient{
+position: absolute;
+inset: 0;
+z-index: -1;
+background: linear-gradient(to top,#030615,rgba(255,25));
+}
+
+.sideBar{
+  position:fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+} 
+
+.bgOverlay {
+  position: absolute;
+  inset: 0;
+  background: #030615;
+  opacity: 0.6;
+}
+
+.sideBarContents {
+  z-index: 15;
+  position: relative;
+  display: flex;
+  flex-direction:column;
+  gap: 1rem;
+  padding: 1rem;
+  overflow-y:scroll;
+  height: 100%;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  background: #030615;
+}
+
+.sideBarContents button{
+  background: transparent;
+  color: white;
+  border: none;
+  outline: none;
+  margin-right: auto;
+  cursor: pointer;
+  transition-duration: 200ms;
+}
+.sideBarContents button i{
+  font-size: 1.2rem;
+}
+.sideBarContents button:hover{
+  opacity: 0.5;
+}
+
+
+@media (min-width: 640px) {
+
+.sideBar{
+  position: relative;
+  inset:unset;
+  min-width: 35%;
+  box-shadow: 0 0 10px 10px #030615;
+
+}
+.sideBarContents{
+  margin: unset;
+}
+}
+
+@media (min-width:200px) and (max-width:550px) {
+
+  .sideBar{
+    position: relative;
+    inset:unset;
+    min-width: 35%;
+    box-shadow: 0 0 10px 10px #030615;
+  
+  }
+  .sideBarContents{
+    margin: unset;
+  }
+  .centered-title {
+    display: flex;
+    justify-content:space-between;
+    align-items:end;
+    text-align: start;
+    
+  }
+  .centered-title img {
+    width: 200px;
+    height: 80px;
+  }
+  .footerImgName {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 11rem;
+  padding-left: 1rem;
+  gap: 1rem;
+}
+.footerImgName  h2{
+  font-size: 2.3rem;
+}
+.footerButtons {
+position: fixed;
+top: 0;
+right: 0;
+}
+.footerRights{
+  padding-right: 2rem;
+  display: flex;
+justify-content: center;
+align-items: center;
+}
+  
 }
