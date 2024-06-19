@@ -186,11 +186,6 @@ background: linear-gradient(to top,#030615,rgba(255,25));
 .sideBarContents button:hover{
   opacity: 0.5;
 }
-.sideBarContents h5{
-  
-}
-
-
 @media (min-width: 640px) {
 
 .sideBar{

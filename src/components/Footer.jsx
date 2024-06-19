@@ -20,7 +20,7 @@ export default function Footer(props) {
       <div className='bgGradient'></div>
       <div>
         <h1 className="centered-title">
-          AstroView by
+          AstroViews by
           <img src="log-rgdev.png" width="300px" height="100px" />
         </h1>
         <h5>Page Last Updated: {currentDate}|           |Page Designer: Ranul Gamage</h5>
