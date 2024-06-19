@@ -370,7 +370,7 @@ footer h5{
   padding: 1%;
 }  
 }
-@media (min-width:1000px){
+@media (min-width:1000px) and (min-height:1000px){
   .infoNote {
     position: fixed;
     top: 0;
@@ -423,20 +423,4 @@ footer h5{
     height:200px ;
   }
   
-.sideBar{
-  position: relative;
-  inset:unset;
-  min-width: 35%;
-  box-shadow: 0 0 10px 10px #030615;
-
-}
-.sideBarContents{
-  margin: unset;
-}
-}
-.loadingPage{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex:1;
 }
