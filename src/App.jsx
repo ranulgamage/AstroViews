@@ -3,13 +3,20 @@ import Footer from "./components/Footer"
 import Main from "./components/Main"
 import SideBar from "./components/sideBar"
 import ReactLoading from 'react-loading';
+import InfoNote from "./components/InfoNote";
 
 function App() {
   const [showDetails, setShowDetails] = useState(false);
   const [data,setData]=useState(null);
+  const [showInfoNote, setShowInfoNote] = useState(true);
   const [loadingPage,setLoadingPage]=useState(false);
+
   function handelDetailPanel(){
     setShowDetails(!showDetails);
+  }
+
+  function handleCloseInfoNote() {
+    setShowInfoNote(false);
   }
 
   useEffect(()=>{
@@ -41,6 +48,7 @@ function App() {
   },[]);
   return (
     <>
+        {showInfoNote && <InfoNote handleClose={handleCloseInfoNote} />}
       {data ? (<Main data={data}  />) :( 
         <div className="loadingPage">
           <ReactLoading  type="spinningBubbles" color="#007bff" height={100} width={100} />
