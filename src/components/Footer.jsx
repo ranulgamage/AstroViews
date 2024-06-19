@@ -1,8 +1,19 @@
 import React from 'react'
 
 export default function Footer(props) {
-   const{handelDetailPanel}=props;
+   const{handelDetailPanel,data}=props;
   const currentDate = new Date().toLocaleDateString();
+  const handleDownload = () => {
+    const imageUrl =data.hdurl;
+    const link = document.createElement('a');
+    link.href = imageUrl;
+    link.download = data.title+'.jpg';
+    link.target = '_blank'; 
+    link.rel = 'noopener noreferrer';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <footer>
@@ -19,7 +30,7 @@ export default function Footer(props) {
 
       </div>
       <div className='footerButtons'>
-        <button>
+        <button onClick={handleDownload}>
           <i className="fa-solid fa-download"></i> Download
         </button>
         <button onClick={handelDetailPanel}>
@@ -27,7 +38,7 @@ export default function Footer(props) {
         </button>
       </div>
       <div className='footerImgName'><h2>
-        Picture Of Our Galaxy The Milky Way Galaxy
+        {data?.title} 
       </h2></div>
     </footer>
 

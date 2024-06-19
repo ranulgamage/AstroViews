@@ -186,6 +186,9 @@ background: linear-gradient(to top,#030615,rgba(255,25));
 .sideBarContents button:hover{
   opacity: 0.5;
 }
+.sideBarContents h5{
+  
+}
 
 
 @media (min-width: 640px) {
@@ -200,6 +203,12 @@ background: linear-gradient(to top,#030615,rgba(255,25));
 .sideBarContents{
   margin: unset;
 }
+}
+.loadingPage{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex:1;
 }
 
 @media (min-width:200px) and (max-width:550px) {

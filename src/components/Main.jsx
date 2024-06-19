@@ -1,9 +1,10 @@
 import React from 'react'
 
-export default function Main() {
+export default function Main(props) {
+  const {data}=props;
   return (
     <div className='imgContainer'>
-      <img src="galaxy-image.png" alt="Picture Of Our Galaxy The Milky Way Galaxy" className='bgImage' />
+      <img src={data.hdurl||"galaxy-image.png"} alt={data.title || "Picture Of Our Galaxy The Milky Way Galaxy(Hint:it mite be but its not)"} className='bgImage' />
     </div>
   )
 }
