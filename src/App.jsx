@@ -31,6 +31,7 @@ function App() {
         day: 'numeric'
       };
       let today = currentDate.toLocaleDateString('en-US', options);
+      console.log("API Date: "+today);
       const localKey = `NASA-APOD-${today}`;
       if (localStorage.getItem(localKey)) {
         const apiData = JSON.parse(localStorage.getItem(localKey));
