@@ -229,7 +229,47 @@ background: linear-gradient(to top,#030615,rgba(255,25));
 .infoNote-content button:hover {
   background-color: #0056b3;
 }
+.topSideBarContents {
+  position: fixed;
+  right: 0;
+  top: 0;
+  display: flex;
+  padding-right: 1rem;
+  align-items:center;
+  gap: 10px;
+}
+.date-picker-button {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 1rem;
+  font-size: medium;
+  font-family:  "Roboto Mono", monospace;
+  transition-duration: 200ms;
+  font-size: 1rem;
+  cursor: pointer;
+  
+}
 
+.date-picker-button:hover {
+  opacity: 0.5;
+
+}
+.calendar-container {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  z-index: 1000;
+  background: rgb(0, 0, 0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.calendar-container .rdp {
+  padding: 10px;
+}
 @media (min-width: 640px) {
 
 .sideBar{
@@ -251,10 +291,11 @@ background: linear-gradient(to top,#030615,rgba(255,25));
 }
 
 @media (min-width:400px) and (max-width:550px) {
-
   .sideBar{
-    position: relative;
-    inset:unset;
+    position: fixed;
+    inset:0;
+    display: flex;
+  flex-direction: column;
     min-width: 35%;
     box-shadow: 0 0 10px 10px #030615;
   
@@ -309,12 +350,54 @@ footer h5{
   align-items: center;
   padding: 1%;
 }
+  .topSideBarContents {
+    position: fixed;
+    right: 0;
+    display: flex;
+    align-items:end;
+    gap: 0px;
+  }
+  .calendar-container {
+    position: absolute;
+    top: 66px;
+    right: 0;
+    z-index: 1000;
+    background: rgb(0, 0, 0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .calendar-container .rdp {
+    padding: 10px;
+  }
 }
 @media (min-width:200px) and (max-width:399px) {
-
+  .topSideBarContents {
+    position: fixed;
+    right: 0;
+    display: flex;
+    align-items:end;
+    gap: 0px;
+  }
+  .calendar-container {
+    position: absolute;
+    top: 66px;
+    right: 0;
+    z-index: 1000;
+    background: rgb(0, 0, 0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .calendar-container .rdp {
+    padding: 10px;
+  }
   .sideBar{
-    position: relative;
-    inset:unset;
+    position: fixed;
+    inset:0;
+    display: flex;
+  flex-direction: column;
     min-width: 35%;
     box-shadow: 0 0 10px 10px #030615;
   
@@ -371,6 +454,7 @@ footer h5{
 }  
 }
 @media (min-width:1000px) and (min-height:1000px){
+  
   .infoNote {
     position: fixed;
     top: 0;
