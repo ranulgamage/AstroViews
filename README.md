@@ -2,7 +2,9 @@
 
 ## Overview
 AstroViews is a captivating application that showcases the wonders of the universe. Built with React.js, this app fetches and displays the Astronomy Picture of the Day from NASA's APOD API, along with the title and detailed information about the image. It's an engaging way to explore space through stunning photographs and educational descriptions.
-
+![Screenshot 2024-06-26 095807](https://github.com/ranulgamage/AstroViews-NASA-Astronomy-Picture-of-the-Day-Web-Application/assets/34148517/82a10eff-8184-4a3d-a205-f40b40466118)
+![Screenshot 2024-06-26 095833](https://github.com/ranulgamage/AstroViews-NASA-Astronomy-Picture-of-the-Day-Web-Application/assets/34148517/baf2bb90-479f-4016-8718-d482188a3137)
+![Screenshot 2024-06-26 095928](https://github.com/ranulgamage/AstroViews-NASA-Astronomy-Picture-of-the-Day-Web-Application/assets/34148517/ca3e6d60-84e4-4cd4-ab53-2201138e18ba)
 ## Features
 
 - 🖼️ **Astronomy Picture of the Day**: Automatically fetches and displays NASA's Astronomy Picture of the Day.
