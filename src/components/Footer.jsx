@@ -33,7 +33,7 @@ export default function Footer(props) {
       >
         <h1 className="centered-title">
           AstroViews by
-          <img src="log-rgdev.png" width="300px" height="100px" alt="RGDev Logo" />
+          <img src="logo-rgdev.png" width="300px" height="100px" alt="RGDev Logo" />
         </h1>
         <h5 className='mobileResizeH5'>
           Page Last Updated: {currentDate} | Page Designer: Ranul Gamage
