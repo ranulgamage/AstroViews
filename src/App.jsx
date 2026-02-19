@@ -12,6 +12,7 @@ function App() {
   const [data, setData] = useState(null);
   const [showInfoNote, setShowInfoNote] = useState(true);
   const [showFavorites, setShowFavorites] = useState(false);
+  const [isDownloading, setIsDownloading] = useState(false);
   
   let currentDate = new Date();
   let options = { timeZone: 'America/New_York' };
@@ -37,7 +38,7 @@ function App() {
   useEffect(() => {
     async function fetchAPIData() {
       const NASA_API_KEY = import.meta.env.VITE_NASA_API_KEY;
-      const url = 'https://api.nasa.gov/planetary/apod' + `?api_key=${NASA_API_KEY}` + `&date=${apiDate}`;
+      const url = 'https://api.nasa.gov/planetary/apod' + `?api_key=${NASA_API_KEY}` + `&date=${apiDate}` + '&thumbs=true';
       console.log("API Date: " + apiDate);
       const localKey = `NASA-APOD-${apiDate}`;
       
@@ -79,7 +80,7 @@ function App() {
   }, [apiDate]);
   
   return (
-    <>
+    <div className="app-shell">
       <AnimatePresence>
         {showInfoNote && <InfoNote handleClose={handleCloseInfoNote} />}
       </AnimatePresence>
@@ -88,7 +89,7 @@ function App() {
         <Main data={data} />
       ) : (
         <div className="loadingPage">
-          <ReactLoading type="spinningBubbles" color="#6366f1" height={100} width={100} />
+          <ReactLoading type="spinningBubbles" color="#1f7bff" height={100} width={100} />
           <h1>Loading...</h1>
         </div>
       )}
@@ -98,7 +99,10 @@ function App() {
           <SideBar 
             setApiDate={setApiDate} 
             data={data} 
-            handelDetailPanel={handelDetailPanel} 
+            handelDetailPanel={handelDetailPanel}
+            onDownloadStart={() => setIsDownloading(true)}
+            onDownloadEnd={() => setIsDownloading(false)}
+            isDownloading={isDownloading}
           />
         )}
       </AnimatePresence>
@@ -106,23 +110,37 @@ function App() {
       <AnimatePresence>
         {showFavorites && (
           <>
-            <div 
-              style={{
-                position: 'fixed',
-                inset: 0,
-                background: 'rgba(0, 0, 0, 0.7)',
-                backdropFilter: 'blur(10px)',
-                zIndex: 1000
-              }}
-              onClick={toggleFavorites}
-            />
+            <div className="favorites-overlay" onClick={toggleFavorites} />
             <FavoritesList setApiDate={setApiDate} onClose={toggleFavorites} />
           </>
         )}
       </AnimatePresence>
+
+      <AnimatePresence>
+        {isDownloading && (
+          <div className="downloadLoadingOverlay">
+            <div className="downloadLoadingCard">
+              <div className="downloadLoadingSpinner">
+                <ReactLoading type="spinningBubbles" color="#56b3ff" height={78} width={78} />
+              </div>
+              <h2>Preparing download...</h2>
+              <p>Fetching media file from source</p>
+            </div>
+          </div>
+        )}
+      </AnimatePresence>
       
-      {data && <Footer data={data} handelDetailPanel={handelDetailPanel} toggleFavorites={toggleFavorites} />}
-    </>
+      {data && (
+        <Footer
+          data={data}
+          handelDetailPanel={handelDetailPanel}
+          toggleFavorites={toggleFavorites}
+          onDownloadStart={() => setIsDownloading(true)}
+          onDownloadEnd={() => setIsDownloading(false)}
+          isDownloading={isDownloading}
+        />
+      )}
+    </div>
   )
 }
 

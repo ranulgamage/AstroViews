@@ -1,4 +1,3 @@
-import React from 'react'
 import { motion } from 'framer-motion'
 import { X, Sparkles } from 'lucide-react'
 
@@ -29,16 +28,16 @@ const InfoNote = ({ handleClose }) => {
           transition={{ delay: 0.3, type: 'spring', stiffness: 200 }}
         >
           <h2 className='noteLogo'>
-            <Sparkles size={40} style={{ display: 'inline', marginRight: '0.5rem' }} />
+            <Sparkles size={40} className="noteIcon" />
             AstroViews
           </h2>
         </motion.div>
         
         <motion.img 
-          src="vite.svg" 
-          width="300px" 
-          height="100px" 
-          alt="Vite Logo"
+          src="logo-rgdev.png" 
+          width="220" 
+          height="70" 
+          alt="RGDev Logo"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
@@ -49,8 +48,8 @@ const InfoNote = ({ handleClose }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
         >
-          AstroViews is a modern web application that displays stunning astronomical images daily from NASA's APOD API. 
-          Explore the cosmos with high-definition imagery, detailed descriptions, and the ability to save your favorite views.
+          AstroViews presents NASA&apos;s Astronomy Picture of the Day in a redesigned cinematic interface.
+          Explore deep space with HD imagery, context-rich notes, and fast date navigation.
         </motion.p>
         
         <motion.p
@@ -59,7 +58,7 @@ const InfoNote = ({ handleClose }) => {
           transition={{ delay: 0.6 }}
           style={{ marginTop: '1rem' }}
         >
-          <strong>New Features:</strong> Save favorites, browse history, download images, and explore different dates with our intuitive calendar.
+          <strong>Features:</strong> Save favorites, browse recent history, download image packs, and share discoveries.
         </motion.p>
         
         <motion.button 
