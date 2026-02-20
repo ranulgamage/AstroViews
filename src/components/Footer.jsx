@@ -104,6 +104,10 @@ export default function Footer(props) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.45, delay: 0.25 }}
       >
+        <div className='footerMobileBrandRow'>
+          <span className='footer-mobile-title'>AstroViews</span>
+          <img src='logo-rgdev.png' height='26' alt='RGDev Logo' />
+        </div>
         {renderActionButtons(true)}
       </motion.div>
     </motion.footer>

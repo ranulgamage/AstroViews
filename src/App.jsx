@@ -80,7 +80,7 @@ function App() {
   }, [apiDate]);
   
   return (
-    <div className="app-shell">
+    <div className={`app-shell${showDetails ? ' sidebar-open' : ''}`}>
       <AnimatePresence>
         {showInfoNote && <InfoNote handleClose={handleCloseInfoNote} />}
       </AnimatePresence>
